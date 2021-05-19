@@ -1,6 +1,14 @@
+## Context
+1. [.Net Core Serilog – Basic](https://github.com/rtodosic/Serilog01/)
+2. .Net Core Serilog – Configuration
+3. [.Net Core Serilog - Structured JSON output](https://github.com/rtodosic/Serilog03/)
+4. [.Net Core Serilog - Enrichers](https://github.com/rtodosic/Serilog04/)
+5. [.Net Core Serilog - Custom JSON output](https://github.com/rtodosic/Serilog05/)
+6. [.Net Core Serilog - Adding Sinks](https://github.com/rtodosic/Serilog06/)
 
+This is part 2 of 6.
 
-## .Net Core Serilog – Configuration
+## 2. .Net Core Serilog – Configuration
 
 Serilog has a lot that could be managed via [configuration](https://github.com/serilog/serilog-settings-configuration). 
 To keep things as simple as possible, we will build on the prior sample and use the appsettings.json file to manage the output logging levels. 
