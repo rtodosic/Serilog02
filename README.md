@@ -11,7 +11,7 @@ To keep things as simple as possible, we will build on the prior sample and use 
    ```
  
 2. Run the app and notice the output does not contain our log message.
-
+  ![Image alt text](Images/Console-Without-Debug.png?raw=true)
 
 3. In the appsettings.json file, replace the contents with the following (under “Override”, change “Serilog02” to match the namespace used in your WeatherForecastController.cs file):
   ```JSON
@@ -30,7 +30,8 @@ To keep things as simple as possible, we will build on the prior sample and use 
   ```
   
 4. Now add the “Serilog.AspNetCore” NuGet package to your project.
-  
+  ![Image alt text](Images/Console-With-Debug.png?raw=true)
+
 5.	In the appsettings.json file, you can try changing the “Serilog: MinimumLevel:Default” to “Debug”, “Warning” and “Error”. Re-run and notice the differences in the output. 
 
 6.	In the appsettings.json file, you can also try changing the namespace overrides to control different log levels for different namespaces.
