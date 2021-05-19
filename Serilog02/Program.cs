@@ -24,9 +24,9 @@ namespace Serilog02
                     webBuilder.UseStartup<Startup>();
                 })
             .UseSerilog((hostingContect, loggerConfiguration) => loggerConfiguration
-                .MinimumLevel.Warning()
-                .MinimumLevel.Override("Serilog02", Serilog.Events.LogEventLevel.Information)
-                .MinimumLevel.Override("Microsoft.Hosting.Lifetime", Serilog.Events.LogEventLevel.Warning)
+                //.MinimumLevel.Warning()
+                //.MinimumLevel.Override("Serilog02", Serilog.Events.LogEventLevel.Information)
+                //.MinimumLevel.Override("Microsoft.Hosting.Lifetime", Serilog.Events.LogEventLevel.Warning)
                 .ReadFrom.Configuration(hostingContect.Configuration)
                 .WriteTo.Console()
             );
