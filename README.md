@@ -28,10 +28,24 @@ To keep things as simple as possible, we will build on the prior sample and use 
     "AllowedHosts": "*"
   }
   ```
-  
-4. Now add the “Serilog.AspNetCore” NuGet package to your project.
+
+4.  In Program.cs, change the CreateHostBuilder() method to the following:
+  ```C#
+  public static IHostBuilder CreateHostBuilder(string[] args) =>
+      Host.CreateDefaultBuilder(args)
+          .ConfigureWebHostDefaults(webBuilder =>
+          {
+              webBuilder.UseStartup<Startup>();
+          })
+      .UseSerilog((hostingContect, loggerConfiguration) => loggerConfiguration
+          .ReadFrom.Configuration(hostingContect.Configuration)
+          .WriteTo.Console(new CompactJsonFormatter())
+      );
+   ```
+
+5. Run the app again and notice that we now see the debug log (9th log message from the top).
   ![Image alt text](Images/Console-With-Debug.png?raw=true)
 
-5.	In the appsettings.json file, you can try changing the “Serilog: MinimumLevel:Default” to “Debug”, “Warning” and “Error”. Re-run and notice the differences in the output. 
+6.	In the appsettings.json file, you can try changing the “Serilog: MinimumLevel:Default” to “Debug”, “Warning” and “Error”. Re-run and notice the differences in the output. 
 
-6.	In the appsettings.json file, you can also try changing the namespace overrides to control different log levels for different namespaces.
+7.	In the appsettings.json file, you can also try changing the namespace overrides to control different log levels for different namespaces.
