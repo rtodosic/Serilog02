@@ -47,7 +47,7 @@ To keep things as simple as possible, we will build on the prior sample and use 
           })
       .UseSerilog((hostingContect, loggerConfiguration) => loggerConfiguration
           .ReadFrom.Configuration(hostingContect.Configuration)
-          .WriteTo.Console(new CompactJsonFormatter())
+          .WriteTo.Console()
       );
    ```
 
