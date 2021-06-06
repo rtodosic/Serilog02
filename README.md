@@ -45,8 +45,8 @@ To keep things as simple as possible, we will build on the prior sample and use 
           {
               webBuilder.UseStartup<Startup>();
           })
-      .UseSerilog((hostingContect, loggerConfiguration) => loggerConfiguration
-          .ReadFrom.Configuration(hostingContect.Configuration)
+      .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
+          .ReadFrom.Configuration(hostingContext.Configuration)
           .WriteTo.Console()
       );
    ```
